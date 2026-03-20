@@ -44,6 +44,6 @@ jobs:
         script: |
           docker stop ci-demo || true
           docker rm ci-demo || true
-          docket pull ${{ secrets.DOCKER_USERNAME }}/spring-boot-ci-demo:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/spring-boot-ci-demo:latest
           docker run -d --name ci-demo -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/spring-boot-ci-demo:latest
 
